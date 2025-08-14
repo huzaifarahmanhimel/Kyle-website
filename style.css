@@ -1,4 +1,4 @@
-* Base */
+/* Base */
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 :root{--bg-0:#000;--bg-1:#0a0a0a;--bg-2:#1a1a1a;--bg-3:#2a2a2a;--txt:#fff;--muted:#cfcfd6;--muter:#a0a0aa;--brand-1:#8b5cf6;--brand-2:#6366f1;--card:#111215;--panel:rgba(255,255,255,.06);--ring:0 0 0 3px rgba(139,92,246,.35)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;color:var(--txt);background:linear-gradient(135deg,var(--bg-1),var(--bg-2) 50%,var(--bg-1));min-height:100vh;overflow-x:hidden}
@@ -72,8 +72,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .bw-btn.ghost:hover{background:var(--brand-1);color:#fff;transform:translateY(-2px)}
 .bw-media{justify-self:center;width:min(100%,460px)}
 .glass{position:relative;border-radius:18px;padding:14px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.10);box-shadow:0 30px 80px rgba(0,0,0,.45);backdrop-filter:blur(10px)}
-.book-tilt{position:relative;transform:rotate(-5deg);transition:transform .25s ease,filter .25s ease}
-.book-tilt:hover{transform:rotate(-3deg) translateY(-4px);filter:drop-shadow(0 10px 30px rgba(0,0,0,.35))}
 .book-img{width:100%;height:auto;display:block;border-radius:12px}
 .floor-shadow{position:absolute;left:8%;right:8%;bottom:-10%;height:46px;background:radial-gradient(60% 100% at 50% 0%,rgba(0,0,0,.6),transparent);filter:blur(6px)}
 
@@ -104,8 +102,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 input,textarea{background:#0f1014;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.9rem 1rem;outline:none}
 input:focus,textarea:focus{box-shadow:var(--ring)}.form-note{color:var(--muted);margin-top:.6rem}
 
+/* ===== Pre‑Footer CTA Banner ===== */
+.prefooter{position:relative;text-align:center;padding:clamp(2rem,5vw,4rem) 0;background:linear-gradient(135deg,var(--brand-2),#7a6bfa 50%,var(--brand-1))}
+.prefooter::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 120% at 25% 15%,rgba(255,255,255,.14),transparent 45%),radial-gradient(120% 120% at 80% 85%,rgba(255,255,255,.10),transparent 45%)}
+.pfcta-shell{display:flex;flex-direction:column;align-items:center;gap:clamp(1rem,3vw,1.75rem)}
+.pfcta-title{color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:1.15;font-size:clamp(1.2rem,3.2vw,2.3rem);text-shadow:0 4px 12px rgba(0,0,0,.25)}
+.pfcta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.pfcta-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:800;font-style:italic;font-size:clamp(1rem,2.2vw,1.2rem);background:#fff;color:#6f64ff;border:2px solid rgba(0,0,0,.85);box-shadow:0 4px 0 rgba(0,0,0,.20),0 10px 20px rgba(0,0,0,.18);transform:translateY(0);transition:transform .15s ease,box-shadow .15s ease,background .2s ease,color .2s ease}
+.pfcta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,.20),0 16px 28px rgba(0,0,0,.28)}
+.pfcta-btn .ico{width:20px;height:20px}
+.pfcta-primary{background:#fff}.pfcta-ghost{background:#fff}
+@media (max-width:560px){.pfcta-btn{width:100%;max-width:340px;justify-content:center}.hide-sm{display:none}}
+
+/* ===== Extended Footer ===== */
+.pro-footer{background:#000;border-top:1px solid rgba(255,255,255,.06)}
+.pf-grid{display:grid;grid-template-columns:1.1fr .8fr 1fr;gap:2rem;align-items:start}
+.pf-badge{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(2rem,5vw,3rem);letter-spacing:.3px;color:#fff;margin-bottom:1rem}
+.pf-disclaimer{color:#cfcfd6;font-style:italic;line-height:1.55;max-width:56ch}
+.pf-center{border-left:1px solid rgba(255,255,255,.15);border-right:1px solid rgba(255,255,255,.15);padding:0 2rem}
+.pf-links{list-style:none;display:grid;gap:.6rem;justify-items:center}
+.pf-links a{color:#fff;text-decoration:none;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.pf-links a:hover{opacity:.85}
+.pf-follow{color:#cfcfd6;font-style:italic;text-align:center;margin:0 0 .75rem}
+.pf-social{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.pf-ico{width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.15);font-weight:900;position:relative}
+.pf-ico::after{content:attr(data-ico);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:18px;letter-spacing:.4px}
+.pf-ico.fb{background:#1877F2}.pf-ico.ig{background:#E1306C}.pf-ico.li{background:#0A66C2}.pf-ico.tk{background:#111;border-color:#444}
+@media (max-width:980px){.pf-grid{grid-template-columns:1fr;gap:1.5rem;text-align:center}.pf-center{border:0;padding:0}.pf-grid>*+*{border-top:1px solid rgba(255,255,255,.12);padding-top:1.25rem}.pf-disclaimer{margin-left:auto;margin-right:auto}}
+
 /* Footer */
-.site-footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 0;background:#070709}.footer-wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.site-footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 0;background:#070709}
+.footer-wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .back-top{color:var(--muted);text-decoration:none}.back-top:hover{color:#fff}
 
 /* Motion */
