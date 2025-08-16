@@ -61,7 +61,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
   .hero-container{
     background-image:
       linear-gradient(135deg, rgba(5,5,8,.86) 0%, rgba(20,20,28,.88) 30%, rgba(30,30,38,.92) 70%, rgba(18,18,26,.94) 100%),
-      url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');
+      url('kyle\ hero.jpeg');
     background-position:50% 40%;
   }
 }
