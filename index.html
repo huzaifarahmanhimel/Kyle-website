@@ -23,6 +23,7 @@
           <li><a class="nav-link" href="#start">Start Here</a></li>
           <li><a class="nav-link" href="#app">App</a></li>
           <li><a class="nav-link" href="#book">Book</a></li>
+          <li><a class="nav-link" href="#course">Course</a></li>
           <li><a class="nav-link" href="#better-way">Better Way</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
@@ -126,29 +127,186 @@
       </div>
     </section>
 
-     <!-- App -->
-    <section id="app" class="section padded">
+    
+
+    <!-- App -->
+  <section id="app" class="section padded">
+   <div class="wrap grid-2">
+     <div>
+      <header class="section-head">
+        <h2 class="section-title">The app</h2>
+        <p class="section-sub">Money made simple and spiritual</p>
+      </header>
+      <ul class="feature-list">
+        <li>Plan your month in minutes</li>
+        <li>Track giving and goals together</li>
+        <li>Biblical prompts that keep you centered</li>
+      </ul>
+      <div class="cta-buttons">
+        <a href="#" class="cta-button cta-primary">Get the App</a>
+        <a href="#contact" class="cta-button cta-secondary">Talk to the team</a>
+      </div>
+    </div>
+    <div class="phone-slider" aria-roledescription="carousel" aria-label="App preview carousel">
+      <style>
+        .phone-slider{position:relative;max-width:320px;width:100%;margin:0 auto}
+        .phone-slider .slider-viewport{overflow:hidden;border-radius:20px;background:transparent;touch-action:pan-y}
+        .phone-slider .slides{display:flex;transition:transform .35s ease}
+        .phone-slider .slide{min-width:100%;flex:0 0 100%;display:flex;align-items:center;justify-content:center;background:transparent}
+        .phone-slider .slide img{width:100%;height:auto;display:block}
+        .phone-slider .slider-dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
+        .phone-slider .slider-dots button{width:10px;height:10px;border-radius:50%;border:none;background:#666;opacity:.9;cursor:pointer}
+        .phone-slider .slider-dots button[aria-selected="true"]{background:#fff}
+        /* Drag affordance on desktop */
+        .dragging .slides{transition:none}
+      </style>
+
+      <div class="slider-viewport">
+        <ul class="slides" role="list">
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 7">
+            <img src="1.png" alt="App preview 1" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 7">
+            <img src="2.png" alt="App preview 2" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 7">
+            <img src="3.png" alt="App preview 3" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 7">
+            <img src="4.png" alt="App preview 4" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 5 of 7">
+            <img src="5.png" alt="App preview 5" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 6 of 7">
+            <img src="6.png" alt="App preview 6" />
+          </li>
+          <li class="slide" role="group" aria-roledescription="slide" aria-label="Slide 7 of 7">
+            <img src="7.png" alt="App preview 7" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="slider-dots" role="tablist" aria-hidden="false">
+        <button role="tab" aria-selected="true" aria-controls="slide-1"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-2"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-3"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-4"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-5"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-6"></button>
+        <button role="tab" aria-selected="false" aria-controls="slide-7"></button>
+      </div>
+
+      <script>
+        (function(){
+          const root = document.currentScript.parentElement;
+          const slidesEl = root.querySelector('.slides');
+          const viewport = root.querySelector('.slider-viewport');
+          const slides = Array.from(slidesEl.children);
+          const dots = Array.from(root.querySelectorAll('.slider-dots button'));
+          let index = 0;
+
+          function update(){
+            slidesEl.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((d,i)=> d.setAttribute('aria-selected', String(i === index)));
+          }
+
+          function move(delta){
+            index = (index + delta + slides.length) % slides.length;
+            update();
+          }
+
+          dots.forEach((d,i)=> d.addEventListener('click', ()=> { index = i; update(); }));
+
+          // Pointer-driven swipe (touch + mouse)
+          let startX = 0, currentX = 0, dragging = false;
+          const threshold = 40; // px to trigger slide change
+
+          function onPointerDown(e){
+            dragging = true;
+            startX = currentX = (e.clientX ?? e.touches?.[0]?.clientX);
+            root.classList.add('dragging');
+            // cancel transition so we can follow finger
+            slidesEl.style.transition = 'none';
+            viewport.setPointerCapture?.(e.pointerId || 0);
+          }
+
+          function onPointerMove(e){
+            if(!dragging) return;
+            const x = (e.clientX ?? e.touches?.[0]?.clientX);
+            if (typeof x !== 'number') return;
+            const dx = x - startX;
+            currentX = x;
+            const percent = (-index * 100) + (dx / viewport.clientWidth * 100);
+            slidesEl.style.transform = `translateX(${percent}%)`;
+          }
+
+          function onPointerUp(e){
+            if(!dragging) return;
+            dragging = false;
+            const dx = (currentX - startX) || 0;
+            root.classList.remove('dragging');
+            slidesEl.style.transition = '';
+            if (dx > threshold) { move(-1); }
+            else if (dx < -threshold) { move(1); }
+            else { update(); }
+          }
+
+          // Bind both pointer and touch (for older iOS Safari without Pointer Events)
+          if (window.PointerEvent){
+            viewport.addEventListener('pointerdown', onPointerDown);
+            window.addEventListener('pointermove', onPointerMove);
+            window.addEventListener('pointerup', onPointerUp);
+            window.addEventListener('pointercancel', onPointerUp);
+          } else {
+            viewport.addEventListener('touchstart', onPointerDown, {passive:true});
+            window.addEventListener('touchmove', onPointerMove, {passive:true});
+            window.addEventListener('touchend', onPointerUp);
+            window.addEventListener('touchcancel', onPointerUp);
+          }
+
+          // Keyboard support when focused
+          root.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') move(-1);
+            if (e.key === 'ArrowRight') move(1);
+          });
+
+          // init
+          update();
+        })();
+      </script>
+    </div>
+  </div>
+</section>
+
+ <!-- course -->
+    <section id="course" class="section padded alt">
       <div class="wrap grid-2">
+        <div class="course-cover">
+          <div class="cover-glow"></div>
+          <img src="Course.jpeg" alt="Course thumbnail" class="cover-img">
+        </div>
         <div>
           <header class="section-head">
-            <h2 class="section-title">The app</h2>
-            <p class="section-sub">Money made simple and spiritual</p>
+            <h2 class="section-title">The course</h2>
+            <p class="section-sub">A hands-on course to steward your money with faith and purpose</p>
           </header>
-          <ul class="feature-list">
-            <li>Plan your month in minutes</li>
-            <li>Track giving and goals together</li>
-            <li>Biblical prompts that keep you centered</li>
+          <ul class="check-list">
+            <li>Short video lessons you can complete in a weekend</li>
+            <li>Downloadable worksheets and monthly templates</li>
+            <li>Actionable steps for giving, saving, and debt</li>
           </ul>
           <div class="cta-buttons">
-            <a href="#" class="cta-button cta-primary">Get the App</a>
-            <a href="#contact" class="cta-button cta-secondary">Talk to the team</a>
+            <a href="#" class="cta-button cta-primary">Enroll Course</a>
+            <a href="#contact" class="cta-button cta-secondary">Contact Us</a>
           </div>
-        </div>
-        <div class="phone-frame">
-          <img src="app.png" alt="App preview" class="phone-screen">
         </div>
       </div>
     </section>
+    
+
+
+
 
     <!-- About -->
     <section id="about" class="section padded">
@@ -240,10 +398,10 @@
         <div class="pf-right pf-block">
           <p class="pf-follow">Follow me for free advice</p>
           <div class="pf-social">
-            <a class="pf-ico fb" href="#" target="_blank" rel="noopener" aria-label="Facebook" data-ico="f"></a>
-            <a class="pf-ico ig" href="#" target="_blank" rel="noopener" aria-label="Instagram" data-ico="IG"></a>
-            <a class="pf-ico li" href="#" target="_blank" rel="noopener" aria-label="LinkedIn" data-ico="in"></a>
-            <a class="pf-ico tk" href="#" target="_blank" rel="noopener" aria-label="TikTok" data-ico="t"></a>
+            <a class="pf-ico fb" href="https://www.facebook.com/s.kyleblackwell" target="_blank" rel="noopener" aria-label="Facebook" data-ico="f"></a>
+            <a class="pf-ico ig" href="https://www.instagram.com/s.kyleblackwell/" target="_blank" rel="noopener" aria-label="Instagram" data-ico="IG"></a>
+            <a class="pf-ico li" href="https://www.linkedin.com/in/kyle-blackwell-cfp%C2%AE%EF%B8%8F-850167356/" target="_blank" rel="noopener" aria-label="LinkedIn" data-ico="in"></a>
+            <a class="pf-ico tk" href="https://www.tiktok.com/@s.kyleblackwell" target="_blank" rel="noopener" aria-label="TikTok" data-ico="t"></a>
           </div>
         </div>
       </div>
