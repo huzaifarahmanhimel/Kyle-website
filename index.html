@@ -57,18 +57,19 @@
       <h2 class="bottom-text wrap">Your money decisions today shape your freedom, opportunities, and impact. I help you make them wisely.</h2>
     </section>
 
-    <!-- Problem -->
-    <section id="problem" class="problem-section section padded">
-      <div class="problem-content wrap">
-        <div class="problem-image">
-          <div class="image-frame">
-            <img src="kyle.png" alt="Professional headshot" class="problem-profile-image">
-          </div>
-        </div>
-        <div class="problem-text">
-          <h2 class="problem-title">The system was not built for you</h2>
-          <p class="problem-description">Most money advice targets people twice your age with twice your income. You get stuck navigating debt, comparison, and loud opinions on TikTok. Let’s make it simple and real.</p>
-        </div>
+    <section id="problem" class="problem-section section padded" aria-labelledby="problem-title">
+      <div class="wrap" style="text-align:center;">
+      <h2 id="problem-title" class="section-title" style="margin-top:.5rem;">The system wasn't built for you</h2>
+      <p class="problem-description" style="max-width:700px;margin:0.75rem auto 1rem;"></p>
+        Most mainstream money advice assumes more income, different responsibilities, and a different timeline.<br> 
+        The results are confusion, comparison, and guilt instead of clear, practical next steps.<br/>
+      </p>
+
+      <ul class="problem-list" style="list-style:none;padding:0;margin:0.5rem auto 1rem;display:inline-block;text-align:left;">
+        <li style="margin:6px 0;">✓ Advice for older / wealthier people</li>
+        <li style="margin:6px 0;">✓ One-size-fits-all budgets that don't last</li>
+        <li style="margin:6px 0;">✓ Loud opinions instead of simple steps</li>
+      </ul>
       </div>
     </section>
 
@@ -93,12 +94,7 @@
             <a href="#app" class="bw-btn ghost">Try the app</a>
           </div>
         </div>
-        <figure class="bw-media">
-          <div class="glass">
-            <img src="about.png" alt="Purpose in Every Paycheck book cover" class="book-img">
-            <span class="floor-shadow" aria-hidden="true"></span>
-          </div>
-        </figure>
+        
       </div>
     </section>
 
@@ -379,34 +375,113 @@
     <!-- Extended Footer -->
     <section id="extended-footer" class="pro-footer section padded">
       <div class="wrap pf-grid">
-        <div class="pf-left pf-block">
-          <div class="pf-badge" aria-label="Featured in Forbes">Forbes</div>
-          <p class="pf-disclaimer">Educational content only. This is not personalized financial advice. Views are my own and do not necessarily reflect my employer. Consider your situation or consult an advisor before decisions.</p>
-        </div>
-        <div class="pf-center pf-block">
-          <nav aria-label="Footer navigation">
-            <ul class="pf-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#start">Start Here</a></li>
-              <li><a href="#book">Book</a></li>
-              <li><a href="#app">App</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="pf-right pf-block">
-          <p class="pf-follow">Follow me for free advice</p>
-          <div class="pf-social">
-            <a class="pf-ico fb" href="https://www.facebook.com/s.kyleblackwell" target="_blank" rel="noopener" aria-label="Facebook" data-ico="f"></a>
-            <a class="pf-ico ig" href="https://www.instagram.com/s.kyleblackwell/" target="_blank" rel="noopener" aria-label="Instagram" data-ico="IG"></a>
-            <a class="pf-ico li" href="https://www.linkedin.com/in/kyle-blackwell-cfp%C2%AE%EF%B8%8F-850167356/" target="_blank" rel="noopener" aria-label="LinkedIn" data-ico="in"></a>
-            <a class="pf-ico tk" href="https://www.tiktok.com/@s.kyleblackwell" target="_blank" rel="noopener" aria-label="TikTok" data-ico="t"></a>
-          </div>
-        </div>
+      <div class="pf-left pf-block">
+        <div class="pf-badge" aria-label="Featured in Forbes">Forbes</div>
+        <p class="pf-disclaimer">Educational content only. This is not personalized financial advice. Views are my own and do not necessarily reflect my employer. Consider your situation or consult an advisor before decisions.</p>
       </div>
-    </section>
-  </main>
+
+      <div class="pf-center pf-block">
+        <nav aria-label="Footer navigation">
+        <ul class="pf-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#start">Start Here</a></li>
+          <li><a href="#book">Book</a></li>
+          <li><a href="#app">App</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#course">Course</a></li>
+
+        </ul>
+        </nav>
+      </div>
+
+      <div class="pf-right pf-block">
+        <p class="pf-follow">Follow me for free advice</p>
+
+        <!-- Social icons: square buttons with hover/focus effects -->
+        <style>
+          .pf-social { display:flex; gap:12px; align-items:center; padding:0; margin:0; list-style:none; }
+
+          .pf-social .social-btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:44px;
+            height:44px;
+            border-radius:6px;
+            background:var(--bg,#fff);
+            color:var(--icon-color,#000);
+            text-decoration:none;
+            font-size:16px;
+            transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, filter .18s ease;
+            will-change: transform;
+            cursor:pointer;
+            border: 1px solid rgba(0,0,0,0.04);
+          }
+
+          /* general hover / focus */
+          .pf-social .social-btn:hover,
+          .pf-social .social-btn:focus{
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+            color:var(--fg,#fff);
+            background:var(--brand, #222);
+            filter: none;
+          }
+
+          .pf-social .social-btn:focus-visible{
+            outline: none;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.14), 0 0 0 4px rgba(78,87,248,0.12);
+          }
+
+          /* per-brand defaults (hover uses --brand and --fg) */
+          .social-btn[data-brand="facebook"]{ --bg:#f5f8ff; --brand:#1877F2; --fg:#fff; --icon-color:#0b254f; }
+          .social-btn[data-brand="linkedin"]{ --bg:#f5f7fa; --brand:#0A66C2; --fg:#fff; --icon-color:#08325b; }
+          .social-btn[data-brand="instagram"]{ --bg:#fff4f7; --brand:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); --fg:#fff; --icon-color:#8b3a5f; }
+          .social-btn[data-brand="tiktok"]{ --bg:#fff; --fg:#fff; --icon-color:#000; }
+
+          /* TikTok: use a gradient on hover */
+          .social-btn[data-brand="tiktok"]:hover,
+          .social-btn[data-brand="tiktok"]:focus{
+            background: linear-gradient(135deg,#69C9D0,#EE1D52);
+            color:#fff;
+          }
+
+          /* make sure the icon sizes are consistent */
+          .pf-social .social-btn i { font-size:18px; line-height:1; display:block; }
+
+        </style>
+
+        <ul class="pf-social">
+          <li>
+            <a class="social-btn" data-brand="facebook" href="https://www.facebook.com/s.kyleblackwell" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a class="social-btn" data-brand="linkedin" href="https://www.linkedin.com/in/kyle-blackwell-cfp%C2%AE%EF%B8%8F-850167356/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a class="social-btn" data-brand="instagram" href="https://www.instagram.com/s.kyleblackwell/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li>
+            <a class="social-btn" data-brand="tiktok" href="https://www.tiktok.com/@s.kyleblackwell" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+              <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+
+        </div>
+            </div>
+          </section>
+          </main>
 
   <!-- Simple copyright bar -->
   <footer class="site-footer">
@@ -415,7 +490,7 @@
       <a href="#home" class="back-top">Back to top ↑</a>
     </div>
   </footer>
-
+  <script src="https://kit.fontawesome.com/299cfd4331.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 </html>
