@@ -48,33 +48,146 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .profile-image{width:100%;max-width:500px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;z-index:2;object-fit:cover;display:block}
 .image-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:radial-gradient(circle,rgba(0, 0, 0, 0.12) 0%,transparent 70%);border-radius:50%;z-index:1}
 
-/* Removed responsive background images — hero now uses only a subtle gradient overlay */
-
+/* Responsive background images for hero (desktop / tablet / mobile + high-DPI support)
+    Replace the file names below with your actual image files (eg: images/kyle-hero-desktop.jpg, ...@2x.jpg) */
 .hero-container{
-    background: #000;
-    background-color: #000;
-    /* solid black background for hero section */
+  /* base gradient overlay + desktop fallback */
+  background-color:#070709;
+  background-image:
+     linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
+     url("");
+  background-size:cover;
+  background-position:center 35%;
+  background-repeat:no-repeat;
+  background-attachment:scroll;
 }
 
-/* keep small-screen spacing tweaks but no image swaps */
+/* Prefer image-set for DPR-aware loading where supported */
+.hero-container{
+  background-image:
+     linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
+     -webkit-image-set(
+        url("images/kyle-hero-desktop.jpg") 1x,
+        url("images/kyle-hero-desktop@2x.jpg") 2x
+     );
+  background-image:
+     linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
+     image-set(
+        url("images/kyle-hero-desktop.jpg") 1x,
+        url("images/kyle-hero-desktop@2x.jpg") 2x
+     );
+}
+
+/* Tablet: switch to tablet crop/size to save bandwidth */
+@media (max-width:1200px){
+  .hero-container{
+     background-position:center 40%;
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
+        url("images/kyle-hero-tablet.jpg");
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
+        -webkit-image-set(
+          url("images/kyle-hero-tablet.jpg") 1x,
+          url("images/kyle-hero-tablet@2x.jpg") 2x
+        );
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
+        image-set(
+          url("images/kyle-hero-tablet.jpg") 1x,
+          url("images/kyle-hero-tablet@2x.jpg") 2x
+        );
+  }
+}
+
+/* Mobile: use a mobile-optimized image and tighter positioning */
 @media (max-width:560px){
-    .hero-content { gap: 1.25rem; }
-    .main-title { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .hero-container{
+     background-color:#070709;
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
+        url("images/kyle-hero-mobile.jpg");
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
+        -webkit-image-set(
+          url("images/kyle-hero-mobile.jpg") 1x,
+          url("images/kyle-hero-mobile@2x.jpg") 2x
+        );
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
+        image-set(
+          url("images/kyle-hero-mobile.jpg") 1x,
+          url("images/kyle-hero-mobile@2x.jpg") 2x
+        );
+     background-position:center 60%;
+     background-size:cover;
+     background-repeat:no-repeat;
+  }
+
+  /* tighten hero content spacing on very small screens if needed */
+  .hero-content { gap: 1.25rem; }
+  .main-title { font-size: clamp(2.2rem, 9vw, 3.5rem); }
 }
 
-/* If you used the optional hero-image-block, remove its embedded images */
+/* Extra fallback for older browsers / non-supporting image-set: serve @2x on high DPI via media query */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-container{
+     background-image:
+        linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
+        url("images/kyle-hero-desktop@2x.jpg");
+  }
+  @media (max-width:1200px){
+     .hero-container{
+        background-image:
+          linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
+          url("images/kyle-hero-tablet@2x.jpg");
+     }
+  }
+  @media (max-width:560px){
+     .hero-container{
+        background-image:
+          linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
+          url("images/kyle-hero-mobile@2x.jpg");
+     }
+  }
+}
+
+/* Optional: helper class for using a responsive background block inside the hero (use instead of <img> if desired) */
 .hero-image-block{
-    width:100%;
-    max-width:520px;
-    aspect-ratio: 4/5;
-    border-radius:20px;
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
-    overflow:hidden;
-    background-image: none; /* disable the default portrait images */
-    background-color: transparent;
+  width:100%;
+  max-width:520px;
+  aspect-ratio: 4/5;
+  border-radius:20px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  overflow:hidden;
+}
+/* default block bg */
+.hero-image-block{
+  background-image:
+     -webkit-image-set(url("images/kyle-portrait.jpg") 1x, url("images/kyle-portrait@2x.jpg") 2x);
+  background-image:
+     image-set(url("images/kyle-portrait.jpg") 1x, url("images/kyle-portrait@2x.jpg") 2x);
+}
+/* tablet / mobile variants for the block (optional) */
+@media (max-width:1200px){
+  .hero-image-block{
+     background-image:
+        image-set(url("images/kyle-portrait-tablet.jpg") 1x, url("images/kyle-portrait-tablet@2x.jpg") 2x);
+  }
+}
+@media (max-width:560px){
+  .hero-image-block{
+     background-image:
+        image-set(url("images/kyle-portrait-mobile.jpg") 1x, url("images/kyle-portrait-mobile@2x.jpg") 2x);
+  }
+}
+
+/* Optional: reduce motion safe-guard */
+@media (prefers-reduced-motion: reduce){
+  .hero-container { background-attachment: scroll; }
 }
 
 /* Bottom band */
