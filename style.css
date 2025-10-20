@@ -67,14 +67,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
   background-image:
      linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
      -webkit-image-set(
-        url("images/kyle-hero-desktop.jpg") 1x,
-        url("images/kyle-hero-desktop@2x.jpg") 2x
+        url("kyle\ hero.jpeg") 1x,
+        url("kyle\ hero.jpeg") 2x
      );
   background-image:
      linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
      image-set(
-        url("images/kyle-hero-desktop.jpg") 1x,
-        url("images/kyle-hero-desktop@2x.jpg") 2x
+        url("kyle\ hero.jpeg") 1x,
+        url("kyle\ hero.jpeg") 2x
      );
 }
 
@@ -84,18 +84,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
      background-position:center 40%;
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
-        url("images/kyle-hero-tablet.jpg");
+        url("kyle\ hero.jpeg");
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
         -webkit-image-set(
-          url("images/kyle-hero-tablet.jpg") 1x,
-          url("images/kyle-hero-tablet@2x.jpg") 2x
+          url("kyle\ hero.jpeg") 1x,
+          url("kyle\ hero.jpeg") 2x
         );
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
         image-set(
-          url("images/kyle-hero-tablet.jpg") 1x,
-          url("images/kyle-hero-tablet@2x.jpg") 2x
+          url("kyle\ hero.jpeg") 1x,
+          url("kyle\ hero.jpeg") 2x
         );
   }
 }
@@ -106,18 +106,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
      background-color:#070709;
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
-        url("images/kyle-hero-mobile.jpg");
+        url("kyle\ hero.jpeg");
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
         -webkit-image-set(
-          url("images/kyle-hero-mobile.jpg") 1x,
-          url("images/kyle-hero-mobile@2x.jpg") 2x
+          url("kyle\ hero.jpeg") 1x,
+          url("kyle\ hero.jpeg") 2x
         );
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
         image-set(
-          url("images/kyle-hero-mobile.jpg") 1x,
-          url("images/kyle-hero-mobile@2x.jpg") 2x
+          url("kyle\ hero.jpeg") 1x,
+          url("kyle\ hero.jpeg") 2x
         );
      background-position:center 60%;
      background-size:cover;
