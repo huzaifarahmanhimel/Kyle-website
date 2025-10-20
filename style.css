@@ -36,7 +36,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .cta-secondary{background:transparent;color:var(--brand-1);border:2px solid var(--brand-1)}
 .cta-secondary:hover{background:var(--brand-1);color:#fff;transform:translateY(-2px)}
 
+/* Hero */
+.hero-container{min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+.text-content{position:relative;z-index:2}
+.main-title{font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;line-height:.9;margin-bottom:1.25rem;letter-spacing:-.02em;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
+.generation-text{font-style:italic;color:#e0e0e0}
+.subtitle{font-size:clamp(1.1rem,2.5vw,1.35rem);color:#fff;line-height:1.5;margin-bottom:2rem;font-style:italic;font-weight:300;opacity:.95}
+.credentials{color:#fff;font-size:clamp(.92rem,2vw,1rem)}
+.image-content{position:relative;display:flex;justify-content:center;align-items:center}
+.profile-image{width:100%;max-width:500px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;z-index:2;object-fit:cover;display:block}
+.image-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:radial-gradient(circle,rgba(0, 0, 0, 0.12) 0%,transparent 70%);border-radius:50%;z-index:1}
+
 /* Removed responsive background images — hero now uses only a subtle gradient overlay */
+
 .hero-container{
     background: #000;
     background-color: #000;
