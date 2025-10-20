@@ -55,7 +55,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
   background-color:#070709;
   background-image:
      linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
-     url("images/kyle-hero-desktop.jpg");
+     url("");
   background-size:cover;
   background-position:center 35%;
   background-repeat:no-repeat;
