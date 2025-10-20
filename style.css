@@ -51,9 +51,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 /* Removed responsive background images — hero now uses only a subtle gradient overlay */
 
 .hero-container{
-    background: linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%);
-    background-color: #070709;
-    /* no background-image / image-set / DPR fallbacks */
+    background: #000;
+    background-color: #000;
+    /* solid black background for hero section */
 }
 
 /* keep small-screen spacing tweaks but no image swaps */
