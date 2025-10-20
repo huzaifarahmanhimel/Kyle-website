@@ -67,14 +67,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
         background-image:
             linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
             /* fallback single image first, then image-set for high-DPI */
-            url("kyle-hero-tablet.jpg");
+            url("kyle\ hero.jpeg");
         /* prefer image-set where supported for 2x displays */
         background-image:
             linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
-            -webkit-image-set(url("kyle-hero-tablet.jpg") 1x, url("kyle-hero-tablet@2x.jpg") 2x);
+            -webkit-image-set(url("kyle\ hero.jpeg") 1x, url("kyle\ hero.jpeg") 2x);
         background-image:
             linear-gradient(135deg, rgba(10,10,10,.30) 0%, rgba(26,26,26,.30) 100%),
-            image-set(url("kyle-hero-tablet.jpg") 1x, url("kyle-hero-tablet@2x.jpg") 2x);
+            image-set(url("kyle\ hero.jpeg") 1x, url("kyle\ hero.jpeg") 2x);
         background-position: center 40%;
     }
 }
