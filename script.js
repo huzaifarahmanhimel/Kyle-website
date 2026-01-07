@@ -66,6 +66,16 @@ playBtn.addEventListener("click", playVideo);
 videoWrap.addEventListener("click", playVideo);
 
 
+
+// Optional: track CTA clicks (safe to remove)
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a[data-cta]");
+  if (!a) return;
+  console.log("[The Path] CTA click:", a.getAttribute("data-cta"), "->", a.href);
+});
+
+
+
 // Contact form handling
       (function(){
         const form = document.getElementById('contactForm');
