@@ -6,7 +6,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .wrap{max-width:1200px;margin:0 auto;padding:0 1.25rem}
 .section{scroll-margin-top:92px}
 .padded{padding:5rem 0}
-.alt{background:#291a60}
+.alt{background:#1a192e}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(41,26,96,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
