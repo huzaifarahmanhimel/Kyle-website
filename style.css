@@ -65,8 +65,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .cta-secondary:hover{background:var(--brand-1);color:#fff;transform:translateY(-2px)}
 
 /* Hero */
-.hero-container{min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative;}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+.hero-container{min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative; background: #000;}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100% var(--bg)}
 .text-content{position:relative;z-index:2}
 .main-title{font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;line-height:.9;margin-bottom:1.25rem;letter-spacing:-.02em;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
 .generation-text{font-style:italic;color:#e0e0e0}
