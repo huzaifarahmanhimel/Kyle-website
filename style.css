@@ -776,6 +776,17 @@ radial-gradient(120% 120% at 80% 85%,rgba(99,102,241,.10),transparent 45%)}
 .check-list{list-style:none;display:grid;gap:.7rem;margin:1rem 0 1.5rem}
 .check-list li{padding-left:1.6rem;position:relative;color:var(--muted)}
 .check-list li::before{content:"✓";position:absolute;left:0;color:#1b1a33;font-weight:900}
+/* Author */
+.endorsement-author {
+  font-size: 0.9rem;
+  color: var(--muted);
+   padding-bottom: 20px;
+}
+
+.endorsement-author span {
+  font-style: italic;
+}
+
 
 /* course */
 .course-cover{position:relative;width:min(100%,380px)}
