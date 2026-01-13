@@ -9,7 +9,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .alt{background:#1b1a33}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(41,26,96,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+.site-header{position:sticky;top:0;z-index:50;background:#1b1a33;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
 .header-wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{font-weight:800;letter-spacing:.5px;text-decoration:none;color:#fff}
 .nav-list{list-style:none;display:flex;gap:1rem;align-items:center}
@@ -65,8 +65,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .cta-secondary:hover{background:var(--brand-1);color:#fff;transform:translateY(-2px)}
 
 /* Hero */
-.hero-container{min-height:calc(100vh - 72px);display:flex;align-items:center;position:relative; background: #000;}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100% var(--bg)}
+.hero-container{
+  min-height: calc(100vh - 72px);
+  display:flex;
+  align-items:center;
+  position:relative;
+
+  background-color:#000;
+  background-image:
+    linear-gradient(135deg, rgba(10,10,10,.28) 0%, rgba(26,26,26,.28) 100%),
+    url("kyle hero.jpeg");
+  background-size:cover;
+  background-position:center 35%;
+  background-repeat:no-repeat;
+}
+
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
 .text-content{position:relative;z-index:2}
 .main-title{font-size:clamp(3rem,8vw,6rem);font-weight:900;color:#fff;line-height:.9;margin-bottom:1.25rem;letter-spacing:-.02em;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
 .generation-text{font-style:italic;color:#e0e0e0}
@@ -74,13 +88,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .credentials{color:#fff;font-size:clamp(.92rem,2vw,1rem)}
 .image-content{position:relative;display:flex;justify-content:center;align-items:center}
 .profile-image{width:100%;max-width:500px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative;z-index:2;object-fit:cover;display:block}
-.image-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:#1b1a33;}
+.image-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:#000000;}
 
 /* Responsive background images for hero (desktop / tablet / mobile + high-DPI support)
     Replace the file names below with your actual image files (eg: images/kyle-hero-desktop.jpg, ...@2x.jpg) */
 .hero-container{
   /* base gradient overlay + desktop fallback */
-  background-color:#1b1a33;
+  background-color:#0c0a31;
   background-image:
      url("kyle\ hero.jpeg");
   background-size:cover;
@@ -130,7 +144,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 /* Mobile: use a mobile-optimized image and tighter positioning */
 @media (max-width:560px){
   .hero-container{
-     background-color:#1b1a33;
+     background-color:#0c0a31;
      background-image:
         linear-gradient(135deg, rgba(10,10,10,.36) 0%, rgba(18,18,26,.36) 100%),
         url("kyle\ hero.jpeg");
