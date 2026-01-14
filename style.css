@@ -884,9 +884,32 @@ white-space: nowrap;
 .contact-form{display:grid;gap:1rem;max-width:700px}
 .form-row{display:grid;gap:.4rem}
 label{color:#e9e9ef;font-size:.95rem}
-input,textarea{background:#0f1014;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.9rem 1rem;outline:none}
-input:focus,textarea:focus{box-shadow:var(--ring)}
+input,textarea,select{background:#0f1014;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.9rem 1rem;outline:none;font-family:inherit;font-size:1rem}
+input:focus,textarea:focus,select:focus{box-shadow:var(--ring);border-color:rgba(255,255,255,.25)}
 .form-note{color:var(--muted);margin-top:.6rem}
+
+
+/* Select dropdown enhancements */
+select{
+appearance:none;
+-webkit-appearance:none;
+-moz-appearance:none;
+cursor:pointer;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M5.5 7.5L10 12l4.5-4.5'/%3E%3C/svg%3E");
+background-repeat:no-repeat;
+background-position:right 1rem center;
+background-size:1rem;
+padding-right:3rem;
+}
+
+
+select option{background:#0f1014;color:#fff}
+
+
+select:disabled{opacity:.6;cursor:not-allowed}
+
+
+select option[value=""]{color:#9aa0aa}
 
 /* ===== Pre-Footer CTA Banner ===== */
 .prefooter{position:relative;text-align:center;padding:clamp(2rem,5vw,4rem) 0;background:linear-gradient(135deg,var(--brand-2),#7a6bfa 50%,var(--brand-1))}

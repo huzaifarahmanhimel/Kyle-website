@@ -86,7 +86,8 @@
             }
           </style>
 
-          <p class="subtitle">Simple, biblical, practical money guidance you can actually follow.</p>
+          <p class="subtitle">For young adults (and the parents and leaders helping them).
+            Simple, biblical, practical money guidance you can actually follow.</p>
           <div class="cta-buttons">
             <style>
               @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
@@ -363,7 +364,7 @@
 
           <p class="endorsement-author">
             — Jeff Henderson, <em>author of <span class="book-title">What to Do Next: Finding Your Best Next Step When
-            </br>Life Is Uncertain</span></em>
+                </br>Life Is Uncertain</span></em>
           </p>
         </div>
 
@@ -714,22 +715,47 @@
             <h2 class="section-title">Contact</h2>
             <p class="section-sub">Want help choosing your next step?</p>
           </header>
+
+
           <form id="contactForm" class="contact-form" action="https://formspree.io/f/your-id" method="POST">
             <div class="form-row">
               <label for="name">Name</label>
               <input id="name" name="name" required />
             </div>
+
+
             <div class="form-row">
               <label for="email">Email</label>
               <input id="email" name="email" type="email" required />
             </div>
+
+
+            <!-- NEW: dropdown field -->
+            <div class="form-row">
+              <label for="topic">I’m reaching out about</label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select an option…</option>
+                <option value="Starter Kit">Starter Kit</option>
+                <option value="Book">Book</option>
+                <option value="Purpose Playbook (course)">Purpose Playbook (course)</option>
+                <option value="Purpose Planner (app)">Purpose Planner (app)</option>
+                <option value="Speaking / group use">Speaking / group use</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+
             <div class="form-row">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5"
                 placeholder="Tell me what you’re working through..."></textarea>
             </div>
+
+
             <!-- hidden reply-to for Formspree -->
             <input type="hidden" name="_replyto" id="_replyto" />
+
+
             <button id="sendBtn" class="cta-button cta-primary" type="submit">Send</button>
             <p class="form-note">No spam. Just real help.</p>
           </form>
