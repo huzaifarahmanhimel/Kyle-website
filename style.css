@@ -824,19 +824,19 @@ position: relative;
 }
 
 
-.endorsement-quote::before {
+/* .endorsement-quote::before {
 content: "“";
 font-size: 2.8rem;
 position: absolute;
 left: -0.6rem;
 top: -0.35rem;
-color: rgba(244, 244, 244, 0.35);
-}
+color: rgba(218, 21, 21, 0.35);
+} */
 
 
 .endorsement-author {
 font-size: 0.95rem;
-color: #ffffff;
+color: #d3d2d2;
 }
 
 
