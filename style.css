@@ -870,7 +870,7 @@ white-space: nowrap;
 
 /* About */
 .about{background:#1b1a33}
-.about-text{color:var(--muted);margin:.5rem 0 1.5rem}
+.about-text{color:var(--muted);margin:.3rem 0 1.0rem}
 .stats{display:grid;grid-template-columns:repeat(3,120px);gap:1rem}
 .stat{background:linear-gradient(135deg,#1b1a33 0%, rgba(41,26,96,.12) 100%);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:.9rem;text-align:center}
 .num{display:block;font-size:1.4rem;font-weight:900}
