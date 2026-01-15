@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 });
 
 
-const YOUTUBE_URL = "https://youtu.be/2W_9kWTo4a0?si=sBbo8NmjbhCOX1Xq";
+const YOUTUBE_URL = "https://www.youtube.com/watch?v=1uvwUf5c9c8";
 
 function getYouTubeID(url) {
   const u = new URL(url);
